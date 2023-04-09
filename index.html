@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="DemoCanvas" width="500" height="600"></canvas>
+<script>
+
+  function Rectangle(length,width) {
+       return {
+           length,width,
+           Circumference:function () {
+               let result = 0;
+               result = (length+width)*2;
+               console.log(result)
+           },
+           Area:function () {
+               let result1 = 0;
+               result1 = length * width;
+               console.log(result1)
+           },
+           canavas:function () {
+               let canvas = document.getElementById("DemoCanvas");
+               if (canvas.getContext)
+               {
+                   let ctx = canvas.getContext('2d');
+                   ctx.fillStyle='#fa4b2a';    // color of fill
+                   ctx.fillRect(10, 40, length, width); // create rectangle
+               }
+           }
+       }
+  }
+  let myRectangle = new Rectangle(10,5);
+  myRectangle.Circumference();
+  myRectangle.Area();
+  myRectangle.canavas();
+
+</script>
+</body>
+</html>
